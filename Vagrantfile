@@ -1,9 +1,9 @@
 Vagrant.configure("2") do |config|
 
-  config.vm.define "ansible" do |ansible|
-    ansible.vm.box = "bento/centos-7.2"
-    ansible.vm.network "private_network", ip: "192.168.50.9"
-  end
+  # config.vm.define "ansible" do |ansible|
+  #   ansible.vm.box = "bento/centos-7.2"
+  #   ansible.vm.network "private_network", ip: "192.168.50.9"
+  # end
 
   config.vm.define "server1" do |server1|
     server1.vm.box = "bento/centos-7.2"

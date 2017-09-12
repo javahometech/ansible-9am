@@ -1,0 +1,25 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+   - name: Install apache web server
+     yum: 'name=httpd state=present'
+   - name: Start the server
+     service: name=httpd state=started
+   - name: Enable apache on reboot
+     service: name=httpd enabled=yes
+   - name: deploy the web application on apache
+     copy: src=./index.html  dest=/var/www/html/index.html
+     notify: restart the server
+   - maven_artifact:
+       group_id: in.javahome
+       artifact_id: myweb
+       repository_url: 'https://repo.javahome.com/maven'
+       username: user
+       password: pass
+       dest: /opt/tomcat8/webapp/myweb.war
+
+
+  handlers:
+     - name: restart the server
+       service: name=httpd state=restarted

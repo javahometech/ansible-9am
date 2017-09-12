@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+   - name: get the storage detials
+     command: df -h
+     register: myoutput    
