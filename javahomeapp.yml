@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+- include: display_storage.yml
+- include: loadbalancer-nginx.yml
+- include: mysql.yml
+- include: webservers.yml

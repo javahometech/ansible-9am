@@ -2,5 +2,6 @@
 - hosts: all
   tasks:
    - name: get the storage detials
-     command: df -h
-     register: myoutput    
+     command: pwd
+     register: myoutput
+   - debug: var=myoutput.stdout_lines

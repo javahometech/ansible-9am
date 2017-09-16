@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  vars:
+    - name: Hari
+    - email: hari@gmail.com
+  tasks:
+    - name: print
+      debug: msg="Welcome Mr. {{name}}, I will email you on {{email}} and Os is {{ansible_os_family}}"
